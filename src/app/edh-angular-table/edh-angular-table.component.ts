@@ -6,7 +6,7 @@ import { ITableColumn } from './models/table-column.interface';
 @Component({
   selector: 'app-edh-angular-table',
   templateUrl: './edh-angular-table.component.html',
-  styleUrls: ['./edh-angular-table.component.css']
+  styleUrls: ['./edh-angular-table.component.scss']
 })
 export class EdhAngularTableComponent<T> implements OnInit, OnDestroy {
 
@@ -25,10 +25,10 @@ export class EdhAngularTableComponent<T> implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   ngOnDestroy(): void {
-    this.data$.complete();
     this.unsubscribeAll$.next(true);
     this.unsubscribeAll$.complete();
   }

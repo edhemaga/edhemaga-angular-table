@@ -1,12 +1,12 @@
 <div class="main-wrapper">
   <div class="table-wrapper">
     <div *ngIf="columns && columns.length != 0; else noColumns">
-      <div class="column" *ngFor="let column of columns">
-        <div [style]="column.style" class="column-header">
-          {{column.header}}
+      <div class="column">
+        <div class="column-header-wrapper">
+          <div *ngFor="let column of columns" class="column-header">{{column.header}}</div>
         </div>
         <div class="column-attribute">
-
+          <div *ngFor="let attribute of data$ | async" class="content">{{attribute | json}}</div>
         </div>
       </div>
     </div>
