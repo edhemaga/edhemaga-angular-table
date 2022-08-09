@@ -1,0 +1,15 @@
+<div class="main-wrapper">
+  <div class="table-wrapper">
+    <div *ngIf="columns && columns.length != 0; else noColumns">
+      <div class="column" *ngFor="let column of columns">
+        <div [style]="column.style" class="column-header">
+          {{column.header}}
+        </div>
+        <div class="column-attribute">
+
+        </div>
+      </div>
+    </div>
+    <ng-template #noColumns>Please specify table columns!</ng-template>
+  </div>
+</div>
